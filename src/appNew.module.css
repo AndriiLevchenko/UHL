@@ -1,0 +1,243 @@
+.App {
+  text-align: center;
+}
+
+.ending {
+  display: block;
+ 
+  top: 10px;
+  left: 0;
+  right: 0;
+  width: 80%;
+  position: absolute;
+  padding: 27px;
+  margin: auto;
+  background-color: #FFF8DC;
+  background: linear-gradient(#FFF8DC, #DEB887, #FFF8DC);
+  border: 5px solid SaddleBrown;
+  border-radius: 38px;
+  z-index: 3;
+}
+.registration{
+  margin-left: 40%;
+}
+.ending {
+  display: block;
+}
+h1{
+  font-family: 'NarbutClassicRegular';
+}
+
+.ending button{
+  width: 86%;
+  height: 11%;
+  margin: auto;
+  padding: 11px;
+  font-size: 2.5em;
+  border: 1px solid grey;
+  border-radius: 13px;
+}
+.picture{
+  position: relative;
+  width: 47%;
+  min-height: 440px;
+  background-color: #a9f5f2;
+  float: left;
+  margin: 2px;
+  padding: 3px;
+  border: 1px solid blue;
+  overflow: hidden;
+}
+.picture__Picture {
+  position: absolute;
+  height: 88%;
+  margin: 4px 4px 0 4px;
+  top: 0; left: 0; right: 0; 
+}
+.picture__Picture img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.picture__Name{
+  position: absolute;
+  height: 12%;
+  margin: 0 4px -4px 4px;
+  padding: 2px;
+  left: 0; right: 0; bottom: 0;
+}
+.picture h4{
+  font-family: 'NarbutClassicRegular';
+  text-align: top;
+  font-size: 17px;
+  margin-left: 11px;
+}
+.questions{
+  font-size: 18px;
+  width: 47%;
+  margin: 2px;
+  padding: 6px;
+  background-color: #f3ffcf;
+  float: left;
+}
+.questions h4{
+  font-size: 17px;
+  margin: 2px 2px 2px 11px;
+}
+
+.logOut{
+  margin-left: 75%;
+}
+
+/*
+ul{
+  list-style-type: none;
+  margin-left: 4px;
+  padding: 0;
+}
+li{
+  position:relative;
+  width: 95%;
+  height: 48px;
+  background-color: #e0f2f7;
+  border: 1px solid cyan;
+  border-radius: 8px;
+  margin: 6px;
+  padding: 4px; 
+  
+}
+li:hover{
+  background-color: #bde0ff;
+}
+
+li label{
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  padding: 13px 0 12px 13px;
+  text-align: left;
+  vertical-align: middle;
+}
+*/
+
+.finishWideScreen, .endingScreen{
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  z-index: 2;
+  opacity: 1; 
+}
+.finishWide{
+  display: block;
+  position: absolute;
+  width: 95%;
+  height: 95%;  
+}
+.finish {
+  width: 310px;
+  height: 570px;
+  position: absolute;
+  top: 9px;
+  left: 0;
+    right: 0;
+  margin: auto;
+  background-color: #e0f2f7;
+  border: 8px solid red;
+  border-radius: 29px;
+}
+.finish h4{
+  font-family: 'NarbutClassicRegular';
+  font-size: 19px;
+  text-align: center;
+}
+.finish img{
+  width: 200px;
+  height: auto;
+  display:block;
+    margin: auto;
+}
+.finish p{
+  text-indent: 1.1em;
+  font-size: 14px;
+  margin: 12px;
+}
+.finish button{
+  width: 80%;
+  height: 40px;
+  margin-top: 4px;
+  display:block;
+   margin: auto;
+  background-color: #bde0ff; 
+  border-radius: 5px;
+}
+#result{
+  font-size: 31px;
+  font-weight: 700;
+  color: red;
+}
+.finish span{
+  font-family: 'NarbutClassicRegular';
+  font-size: 26px;
+  font-weight: 700;
+  color: red;
+}
+.stro{
+  position: relative;
+  width: 96%;
+  height: 51px;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-color:  grey;
+  border-radius: 5px;
+  margin: 4px;
+}
+.stro__i{
+  float:left;
+  width: 5%;
+  height: 100%;
+  padding: 2px;
+  font-size: 1.4em;
+  font-family: 'NarbutClassicRegular';
+  text-align: center;
+}
+.stro__foto{
+  position: relative;
+  float:left;
+  width: 12%;
+  height: 100%;
+}
+.stro__foto img{
+  display: block;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+}
+.stro__Answer{
+  float:left;
+  width: 71%;
+  height: 100%;
+  padding: 3px;
+  font-size: 12px;
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+  body{ background: linear-gradient(white, #a9f5f2, white, #a9f5f2, white);}
+  .picture, .questions {width: 96%; min-height: 288px;}
+  li  { height: 32px; margin: 2px}
+  .beginning, .ending {width: 76%;}
+  .beginning p{font-size: 1.0em;}
+  .stro__Answer{font-size: 9px; padding: 1px;}
+  .stro__i{font-size: 1.2em; padding: 1px;}
+}

@@ -1,0 +1,36 @@
+{
+  "name": "ukrmystetstvo-redux",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@firebase/storage": "^0.3.22",
+    "@react-firebase/auth": "^0.2.9",
+    "axios": "^0.18.0",
+    "css-loader": "^3.2.0",
+    "firebase": "^5.9.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.1.1",
+    "react-redux-firebase": "^3.0.5",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.3.0",
+    "react-with-firebase-auth": "^1.0.2",
+    "redux": "^4.0.4",
+    "redux-form": "^8.2.6",
+    "redux-thunk": "^2.3.0",
+    "style-loader": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
