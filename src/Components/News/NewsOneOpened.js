@@ -34,11 +34,11 @@ class NewsOneOpened extends Component {
                                 <div className={styles.usersPicture}>
                                     <img src={imgNew2}  alt='photogpaphy' />                                   
                                 </div>
-                <div className={styles.usersText}>
+             
                     <h2  className={styles.pPosition}>{this.props.state.appReducer.news[id].name}</h2>
                     <p  className={styles.pPosition}>{this.props.state.appReducer.news[id].text}</p>
                     <h2  className={styles.pPosition}>{this.props.state.appReducer.news[id].date}</h2>             
-                </div>    
+                    <div className="clearfix"></div>
             </div>
     	)
     }    

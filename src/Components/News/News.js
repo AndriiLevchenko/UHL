@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import NewsOne from './NewsOne';
 import styles from './News.module.css';
-import axios from 'axios';
-import {getNews} from './../../redux/appReducer'; 
+//import axios from 'axios';
+//import {getNews} from './../../redux/appReducer'; 
 
 
 class News extends Component {

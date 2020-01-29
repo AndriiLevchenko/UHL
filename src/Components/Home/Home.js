@@ -7,12 +7,12 @@ import React, {Component} from 'react';
 //import SignUpContainer from './Auth/SignUpContainer';
 import styles from './Home.module.css';
 import {NavLink} from 'react-router-dom';
-import Management from './Management/Management';
-import Mentors from './Mentors/Mentors';
-import Admission from './Admission/Admission';
+import Management from './../Management/Management';
+import Mentors from './../Mentors/Mentors';
+import Admission from './../Admission/Admission';
 //<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 //import SignUp from './../Auth/SignUp';
-import {changePictureHome} from './../redux/quizReducer';
+import {changePictureHome} from './../../redux/quizReducer';
 
 
 class Home extends Component {
@@ -33,20 +33,17 @@ class Home extends Component {
 
 	return(
       <div className={styles.slideBottom}>
-                    
-    
-
-	  <div >
-
-        <div className={styles.picture} >
-            <div className={styles.picturePicture}>
-                    <img src={SRC} className={styles.imgResponsive} alt=" " />
-            </div>
-        </div>
-
-        <div className={styles.questions}>
-             
-                  
+	         <div className={styles.classTime}>
+ 
+                    <div className={styles.picture} >
+                                <div className={styles.picturePicture}>
+                                        <img src={SRC} className={styles.imgResponsive} alt=" " />
+                                </div>
+                                 <div className={styles.clearfix}></div>
+                    </div>
+                   
+         
+                    <div className={styles.questions}> 
                                 <div className={styles.serviceSectionGrid}>
                                     <NavLink to='/management' className={styles.referenseHover} >
                                           <div className={styles.icon}>
@@ -85,34 +82,30 @@ class Home extends Component {
                                          
                                     </NavLink>
                                 </div>
-                                       
                               
-              
-        </div>
-        <div className={styles.clearfix}></div>
-    </div>
+                    </div>
+                 
+   
+
+</div>
 
 
-
-        <div className={styles.slideBottomGrid}>
-                          <div className={styles.container}>
-                                <div className={styles.colMd6 + ' ' + styles.slideBottomGrid}>
-                                                  <h3>УКРАЇНСЬКИЙ ГУМАНІТАРНИЙ ЛІЦЕЙ </h3>
-                                                  <h3>КИЇВСЬКОГО НАЦІОНАЛЬНОГО УНІВЕРСИТЕТУ ім. ТАРАСА ШЕВЧЕНКА</h3>
-                                                  <h3>Ви обдаровані? Ви талановиті? Отже, ЛІЦЕЙ - для Вас! </h3>
-                                </div>
-                                <div className={styles.colMd6 + ' ' + styles.slideBottomGrid}>
-                                                  <ul>
-                                                      <li>  <h4>ПЕРШІСТЬ У СТОЛИЦІ ТА УКРАЇНІ ЗА РЕЙТИНГОМ ЗНО</h4> </li>
-                                                      <li><h4>СИСТЕМНА МІЖНАРОДНА ДІЯЛЬНІСТЬ</h4></li>
-                                                      <li><h4>ВИСОКА ЯКІСТЬ ОСВІТНІХ ПОСЛУГ, ДИСТАНЦІЙНА ОСВІТА</h4></li>
-                                                      <li><h4>РОДИНА (ГАРМОНІЙНІ СТОСУНКИ "УЧИТЕЛЬ-УЧЕНЬ", "УЧИТЕЛЬ-БАТЬКИ", "УЧЕНЬ-УЧЕНЬ")</h4> </li>
-                                                  </ul>
-                                </div>
-                                <div className={styles.clearfix}></div>
+                      <div className={styles.slideBottomGrid}>
+                          <div className={styles.addressLeft}>
+                              <h3>УКРАЇНСЬКИЙ ГУМАНІТАРНИЙ ЛІЦЕЙ </h3>
+                              <h3>КИЇВСЬКОГО НАЦІОНАЛЬНОГО УНІВЕРСИТЕТУ ім. ТАРАСА ШЕВЧЕНКА</h3>
+                              <h3>Ви обдаровані? Ви талановиті? Отже, ЛІЦЕЙ - для Вас! </h3>
                           </div>
-                          <div className={styles.clearfix}></div>
-                      </div>
+                          <div className={styles.addressRight}>
+                              <ul>
+                                  <li>  <h4>ПЕРШІСТЬ У СТОЛИЦІ ТА УКРАЇНІ ЗА РЕЙТИНГОМ ЗНО</h4> </li>
+                                  <li><h4>СИСТЕМНА МІЖНАРОДНА ДІЯЛЬНІСТЬ</h4></li>
+                                  <li><h4>ВИСОКА ЯКІСТЬ ОСВІТНІХ ПОСЛУГ, ДИСТАНЦІЙНА ОСВІТА</h4></li>
+                                  <li><h4>РОДИНА (ГАРМОНІЙНІ СТОСУНКИ "УЧИТЕЛЬ-УЧЕНЬ", "УЧИТЕЛЬ-БАТЬКИ", "УЧЕНЬ-УЧЕНЬ")</h4> </li>
+                              </ul>
+                          </div> 
+                    
+            </div>
       </div>
   	)
     }

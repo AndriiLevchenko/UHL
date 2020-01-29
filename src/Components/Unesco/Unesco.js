@@ -1,42 +1,31 @@
 import React from 'react';
-
-//import Button from './../Button/Button';
-//import fire from '../Fire';
-//import SignIn from './../Auth/SignIn';
-//import SignUp from './Auth/SignUp';
-//import SignUpContainer from './Auth/SignUpContainer';
 import styles from './Unesco.module.css';
-//import styles2 from './css/Bootstrap.module.css';
-//<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-//import SignUp from './../Auth/SignUp';
-//import {hideBeginningReducer} from './../../redux/quizReducer';
-
 
 const Unesco =()=> {
+    return(
+        <div className={styles.wrapper}>
+            <div className={styles.textBlock}>
+                <h2>НАВЧИТИ — НЕ МОЖНА, МОЖНА НАВЧИТИСЬ</h2>
+                    <p>Літопис історії ліцею як члена ЮНЕСКО розпочато 3 вересня 1999 року. Пріоритети ліцею — розвиток творчого 
+                    потенціалу Людини, виховання з позицій толерантності, взаєморозуміння між народами на шляху реального 
+                    співробітництва і взаємозбагачення культур, причетності до розв'язання світових проблем через партнерство в системі 
+                    рганізації Об'єднаних Націй, зберігши при цьому національну ідентичність.
+                    </p>
 
- 
-
-   
-    
-    
-    
-
-  return(
-  
-
-          <div id="home" className={styles.header}>
-          <div className={styles.topHeader}>
-                      <div className={'container'}>
-     <h1>     Unesco   </h1>
-                                        <img src={'imgScience.jpg'} alt=' ' />
-                      </div>
-            
-          </div>
-          </div>
-                         
-                          
- 
-    )
-    
-  }
-  export default Unesco;
+                    <img src={'imgUnesco.jpg'} alt="" className={styles.autoImg}/>
+                    
+                    <p>Профіль навчання — суспільно-гуманітарний. Іноземні мови: 4 із 6 офіційних мов ООН (англійська, французька, 
+                    іспанська,китайська), а також італійська, німецька, японська мови. Міжнародні сертифікати з іноземних мов у 11 
+                    ліцеїстів. Ліцей — експериментальний майданчик Усеукраїнського педагогічного дослідження «Теоретико-методичні умови 
+                    нноваційного розвитку акмеологічного ліцею», регіональних досліджень «Здорова дитина – успішна родина – стабільна 
+                    країна», «Упровадження елементів дистанційного навчання в середніх загальноосвітніх закладах м. Києва». У ліцеї — 
+                    європейський стандарт комп’ютеризації. Із серпня 2013 року астероїд (318794) має назву УГЛІЯ (на честь УГЛ), що 
+                    засвідчує циркуляр Міжнародного центру малих тіл Сонячної системи (Minor Planet Center МРС), який є складовою 
+                    частиною Міжнародної астрономічної спілки (International Astronomical Union IAU). В офіційній цитаті зазначено, що 
+                    Український гуманітарний ліцей – учасник Проекту Асоційованих Шкіл ЮНЕСКО. Про ліцей пишуть у виданнях «Шкільного 
+                    світу», газеті «Сегодня», ресурсах Internet…</p>
+            </div> 
+        </div>       
+    ) 
+}
+export default Unesco;

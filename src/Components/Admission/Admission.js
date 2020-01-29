@@ -1,42 +1,35 @@
 import React from 'react';
-
-//import Button from './../Button/Button';
-//import fire from '../Fire';
-//import SignIn from './../Auth/SignIn';
-//import SignUp from './Auth/SignUp';
-//import SignUpContainer from './Auth/SignUpContainer';
 import styles from './Admission.module.css';
-//import styles2 from './css/Bootstrap.module.css';
-//<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-//import SignUp from './../Auth/SignUp';
-//import {hideBeginningReducer} from './../../redux/quizReducer';
+import {NavLink} from 'react-router-dom';
 
 
-const Admission =()=> {
+const Admission =()=> {  
 
- 
+	return (
+      <div className={styles.wrapper}>
+          <div className={styles.textBlock}>
+                  <h2>ДОРОГІ ДІТИ!</h2>
+                  <p>Ви наполегливі й розумні, самостійні й упевнені в собі, не боїтеся труднощів?</p>
+                  <p>Ми раді надати Вам можливість випробувати себе і вступити до Українського гуманітарного ліцею Київського 
+                    національного університету  імені Тараса Шевченка – саме того навчального закладу, у якому Ви мрієте навчатися.</p>
+                  <p>Ми розраховуємо на Вашу свідомість, уміння приймати правильні рішення, бажання вчитися і носити горде звання – ліцеїст.</p>
+                  <p>Ніколи не забувайте, що той, хто хоче чогось досягти, робить більше, ніж той, хто може. Тож учителі ліцею бажають 
+                    Вам наснаги, завзяття й терпіння в  досягненні успіху. І можливо, Ви саме той учень, на якого чекає педколектив 
+                    нашого навчального закладу.</p>
+                  <p><NavLink to='https://drive.google.com/file/d/1_xD0cPz7hBRZraNNJcfLCIknL1JLPyXk/view'>Правила прийому - 2019</NavLink></p>
+                  <p><NavLink to='https://drive.google.com/file/d/1sb2KUYwVS_JxKdFfO25R88oW0vZpsKEx/view'>Календар вступної кампанії 2019</NavLink></p>
+                  <p><NavLink to='https://drive.google.com/file/d/0B-4kKmm5MXN1eV8wM1lRTTlSdkU/view'>Навчальні програми (для вступу до 8 класу)</NavLink></p>
+                  <p>Шановні відвідувачі сайту! Звертаємо Вашу увагу на те, що для ознайомлення розміщено зразки вступних завдань за 
+                    минулі роки, тому окремі питання можуть не відповідати діючим програмам.</p>
+                  <p><NavLink to='https://drive.google.com/file/d/0B-4kKmm5MXN1UVFZUFQxbk9tcGs/view'> Зразки тестів (8 клас)</NavLink></p>
+                  <p><NavLink to='https://drive.google.com/file/d/0B-4kKmm5MXN1eUJuUndITHk2Ukk/view?usp=sharing'>Зразки тестів (9 клас)</NavLink></p>
 
-   
+                  <h4 className={styles.year}><i>Бажаємо вам успіхів!</i></h4>
+                  <h4 className={styles.year}><i>Учителі ліцею</i></h4>   
+
+          </div>    
+      </div>       
+  )  
     
-    
-    
-
-	return(
-	
-
-          <div id="home" className={styles.header}>
-          <div className={styles.topHeader}>
-                      <div className={'container'}>
-                      Admission 
-                                        <img src={'imgScience.jpg'} alt=' ' />
-                      </div>
-            
-          </div>
-          </div>
-                         
-                          
- 
-  	)
-    
-  }
-  export default Admission;
+}
+export default Admission;

@@ -1,0 +1,30 @@
+/*.Auth input{
+	display: block;
+	box-sizing: border-box;
+	border: 1px solid #bebebe;
+	padding: 7px;
+	width: 100%;
+	outline: none;
+	transition: all 300ms ease-in-out;
+}
+
+.Auth label{
+	margin-top: 15px;
+	margin-bottom: 3px;
+	display: block;
+	font-weight: bold;
+	text-align: left;
+}
+
+
+.Auth span{
+	display: block;
+	text-align: left;
+	margin-left: 0;
+    color: red;
+    font-family: tahoma, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+*/

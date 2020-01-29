@@ -7,6 +7,7 @@ import axios from 'axios';
 const CHANGE_SLIDER_POSITION = 'CHANGE_SLIDER_POSITION';
 const HIDE_AUTH = 'HIDE_AUTH';
 const CHANGE_PICTUREHOME = 'CHANGE_PICTUREHOME';
+const OPENCLOSE_MOBILE_MENU = 'OPENCLOSE_MOBILE_MENU';
 
 const initialState={
     
@@ -19,8 +20,8 @@ const initialState={
 		    answers: [],
 		    pictureHome: ['Upravlinnia.png', 'Mentors.jpg', 'Admission.jpg'],
 		    pictureHomeNumber: 1,
-		    sliderPosition: 0
-		  
+		    sliderPosition: 0,
+		    isMobileMenuOpen: false  
 }
 
 const quizReducer =(state=initialState, action) =>{
@@ -41,6 +42,10 @@ const quizReducer =(state=initialState, action) =>{
 										...state,
 										isSignUpOpen: false
 									}
+			case OPENCLOSE_MOBILE_MENU: return{
+										...state,
+										isMobileMenuOpen: !state.isMobileMenuOpen
+			}						
 			case CHANGE_PICTUREHOME:
 									return{
 										...state,
@@ -55,7 +60,7 @@ const quizReducer =(state=initialState, action) =>{
 export const changeSliderPositionAC =()=>({type: CHANGE_SLIDER_POSITION});
 export const hideAuthAC =()=>           ({type: HIDE_AUTH});
 export const changePictureHome =(pictureHomeNumber)=>({type: CHANGE_PICTUREHOME, pictureHomeNumber: pictureHomeNumber})
-
+export const openCloseMobileMenu =()=>({type: OPENCLOSE_MOBILE_MENU});
 
 
 

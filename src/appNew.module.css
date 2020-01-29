@@ -235,7 +235,7 @@ li label{
 @media screen and (max-width: 700px) {
   body{ background: linear-gradient(white, #a9f5f2, white, #a9f5f2, white);}
   .picture, .questions {width: 96%; min-height: 288px;}
-  li  { height: 32px; margin: 2px}
+  li  { max-height: 32px; margin: 2px}
   .beginning, .ending {width: 76%;}
   .beginning p{font-size: 1.0em;}
   .stro__Answer{font-size: 9px; padding: 1px;}
