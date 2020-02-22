@@ -33,22 +33,22 @@
   position: relative;
   width: 96%;
   height: 51px;
-  border-left: 1px solid grey;
-  border-bottom: 1px solid grey;
+ /* border-left: 1px solid grey;
+  border-bottom: 1px solid grey;*/
   border-radius: 11px;
-  margin: 3px;
+  margin: 13px;
 }
 .stro:hover{
   position: relative;
   width: 96%;
   height: 51px;
-  border-top-width: 1px;
+ /* border-top-width: 1px;
   border-left-width: 1px;
   border-right-width: 1px;
   border-style: solid;
   border-color:  grey;
   border-radius: 11px;
-  margin: 3px;
+  margin: 3px;*/
 }
 .stro__i{
   float:left;
@@ -134,11 +134,62 @@
     margin-top: 2px;
     margin-bottom: 0px;
     font-size: 12px;
-  
     text-align: left;
- 
-               
-
+  }
+  .users h2{
+    display: inline-block;
+    width: 67%;
+    text-align: center;
+  }
+ button {
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+}
+.signInButton{
+  display: inline-block;
+  width: 32%;
+  float: right;
+  color: inherit;
+  background-color: inherit;
+}
+.signInButton:hover{
+  display: inline-block;
+  width: 32%;
+  float: right;
+  background-color: grey;
+}
+@media screen and (max-width: 1024px) {
+.signInButton{
+  display: none;
+}
+.usersPictureNews{
+    width: 22%;
+    height: 168px;
+}
+.usersPictureNews img{
+    height: 140px;
+    max-width: 490px;
+  }
+.usersTextNews{
+    width: 60%;
+    float: right;
+    padding: 4px;
+}
+.imageContainer{
+  height: 0;
+  padding-top: 130%;
+  position: relative;
+  display: block;
+}
+.imageContainer img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 100%;
+  max-width: 100%;
+}
 }
 @media screen and (max-width: 768px) {
   body{ background: linear-gradient(white, #a9f5f2, white, #a9f5f2, white);}
@@ -274,7 +325,15 @@
   
     text-align: left;              
 }
-
+.usersPictureNews{
+    width: 25%;
+    height: 144px;
+}
+.usersPictureNews img{
+    height: 126px;
+       max-width: 180px;
+  }
+}
 @media screen and (max-width: 660px) {
   .bigArticleCard h2{
    font-size: 16px;
@@ -285,5 +344,16 @@
     margin: 9px 4px; 
     padding: 2px 2px;
   }
+  .users h2{
+    font-size: 21px;
+  }
+  .usersPictureNews{
+    width: 25%;
+    height: 94px;
 }
+.usersPictureNews img{
+     max-width: 220px;
+    height: 82px;
+  }
 }
+

@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Mentors.module.css';
-import {NavLink} from 'react-router-dom';
 
 
 

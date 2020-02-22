@@ -28,3 +28,17 @@
 }
 
 */
+.inputLabel{
+	position: absolute;
+	left: 15px;
+	top: -15px;
+	margin: 0;
+	padding: 0 4px;
+    font-size: 10px;
+    font-weight: 400;
+    text-align: left;
+    color: #444;
+    z-index: 1;
+    background-color: white;
+    visibility: hidden;
+}

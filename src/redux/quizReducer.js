@@ -1,5 +1,5 @@
 import fixtures from './../fixtures';
-import axios from 'axios';
+//import axios from 'axios';
 //import fire from './../Fire';
 //import {displayName} from './authReducer'; 
 //import store from './redux-store';
@@ -8,6 +8,9 @@ const CHANGE_SLIDER_POSITION = 'CHANGE_SLIDER_POSITION';
 const HIDE_AUTH = 'HIDE_AUTH';
 const CHANGE_PICTUREHOME = 'CHANGE_PICTUREHOME';
 const OPENCLOSE_MOBILE_MENU = 'OPENCLOSE_MOBILE_MENU';
+const CLOSE_ADD_NEWS_FORM = 'CLOSE_ADD_NEWS_FORM';
+const OPEN_SIGNIN_COMPONENT = 'OPEN_SIGNIN_COMPONENT';
+const CLOSE_SIGNIN_COMPONENT = 'CLOSE_SIGNIN_COMPONENT';
 
 const initialState={
     
@@ -21,7 +24,9 @@ const initialState={
 		    pictureHome: ['Upravlinnia.png', 'Mentors.jpg', 'Admission.jpg'],
 		    pictureHomeNumber: 1,
 		    sliderPosition: 0,
-		    isMobileMenuOpen: false  
+		    isMobileMenuOpen: false,
+		    isAddNewsFormOpen: true,
+		    isSignInOpen: false
 }
 
 const quizReducer =(state=initialState, action) =>{
@@ -51,6 +56,21 @@ const quizReducer =(state=initialState, action) =>{
 										...state,
 										pictureHomeNumber: action.pictureHomeNumber
 			}
+			case CLOSE_ADD_NEWS_FORM:
+									return{
+										...state,
+										isAddNewsFormOpen: false
+									}
+			case OPEN_SIGNIN_COMPONENT:
+									return{
+										...state,
+										isSignInOpen: true
+									}
+			case CLOSE_SIGNIN_COMPONENT:
+									return{
+										...state,
+										isSignInOpen: false
+									}
 			default:                 return state;
 			}
 	}
@@ -61,6 +81,9 @@ export const changeSliderPositionAC =()=>({type: CHANGE_SLIDER_POSITION});
 export const hideAuthAC =()=>           ({type: HIDE_AUTH});
 export const changePictureHome =(pictureHomeNumber)=>({type: CHANGE_PICTUREHOME, pictureHomeNumber: pictureHomeNumber})
 export const openCloseMobileMenu =()=>({type: OPENCLOSE_MOBILE_MENU});
+export const closeAddNewsForm =()=>({type: CLOSE_ADD_NEWS_FORM});
+export const openSignInComponent=()=>({type: OPEN_SIGNIN_COMPONENT});
+export const closeSignInComponent=()=>({type: CLOSE_SIGNIN_COMPONENT});
 
 
 

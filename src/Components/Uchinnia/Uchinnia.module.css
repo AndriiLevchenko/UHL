@@ -1,0 +1,187 @@
+
+.wrapper{
+    position: relative;
+    background: #ffffff;
+    min-height: 200%;
+    min-width: 400px;
+    max-width: 1200px;
+    padding: 3px;
+    padding-right: 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.textBlock{
+    overflow: hidden;
+    color:#4a4a4a;
+    font-size: 18px;
+    line-height: 24px;
+    min-height: 200px;
+    /* background: url("../images/hr.png") left bottom repeat-x;  */
+    padding: 10px 40px 10px;
+}
+.textBlock p{
+    margin-bottom: 10px;
+    text-indent: 2em;
+}
+.textBlock .autoImg{
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.cent_img{
+    display: block;
+    margin: 0 auto 40px;
+}
+.auto_img{
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 24px;
+}
+.year{
+    font-weight: 700;
+    padding-left: 3px;
+    color: #ff6a00;
+
+}
+h4{
+  margin: 5px 0;
+}
+ul{
+  margin: 0;
+}
+ul li{
+  list-style-type: none;
+}
+table{
+    width: 98%;
+   
+    border-collapse: separate; /* По умолчанию, когда для каждой ячейки своя граница */ 
+    border-spacing: 7px 1px; /* Горизонтальное расстояние 7px и вертикальное 11px между ячейками */
+    text-align: left;  
+    table-layout: auto; /* По умолчанию. Браузер отображает таблицу после того, как проанализирует размеры ячеек */
+}
+td, th{
+  width: 47%
+}
+.year19921993 {  
+    background-color: #E5FAFF;
+}
+.year19931994 {  
+    background-color: #D8E6FF;
+}
+.year19941995 {  
+    background-color: #DDF5FF;
+}
+.year19951996 {  
+    background-color: #D8FFF9;
+}
+.year19961997 {  
+    background-color: #D0F7CA;
+}
+.year19971998 {  
+    background-color: #D2F4BE;
+}
+.year19981999 {  
+    background-color: #D8F2AE;
+}
+.year19992000 {  
+    background-color: #E0EFA5;
+}
+.year20002001 {  
+    background-color: #EDEDAD;
+}
+.year20012002 {  
+    background-color: #EADBA8;
+}
+.year20022003 {  
+    background-color: #E8DBBB;
+}
+.year20032004 {  
+    background-color: #E8DBBB;
+}
+.year20042005 {  
+    background-color: #E5D2CC;
+}
+.year20052006 {  
+    background-color: #E2CECF;
+}
+.year20062007 {  
+    background-color: #E0D2D8;
+}
+.year20072008 {  
+    background-color: #DDD0DD;
+}
+.year20082009 {  
+    background-color: #D6D2DB;
+}
+.year20092010 {  
+    background-color: #D0D1D8;
+}
+.year20102011 {  
+    background-color: #C7CED6;
+}
+.year20112012 {  
+    background-color: #C0D1D3;
+}
+.year20122013 {  
+    background-color: #d4D1D0;
+}
+.year20132014 {  
+    background-color: #d0CECD;
+}
+.year20142015 {  
+    background-color: #d0CEbD;
+}
+.year20152016 {  
+    background-color: #d0CEaD;
+}
+.year20162017 {  
+    background-color: #d0CE9D;
+}
+.year20172018 {  
+    background-color: #d0CE8D;
+}
+.year20182019 {  
+    background-color: #d0CE7D;
+}
+.year20192020 {  
+    background-color: #d0CE6D;
+}
+
+
+   .col1 {
+    background-color: #f2e8c9;
+   }
+
+   .col2 {
+    background-color: #fff5d7;
+   }
+
+@media (max-width:1024px){
+ .textBlock{
+  font-size: 16px;
+ }
+}
+
+@media screen and (max-width:800px){
+  .wrapper{
+    padding: 20px;
+  }
+  .textBlock h2{
+    font-size: 22px;
+    margin: 5px;
+  }
+  .textBlock{
+    font-size: 13px;
+  }
+  .textBlock li p{
+    margin-bottom: 2px;
+    font-size: 10px;
+    line-height: 14px;
+}
+}
+
+@media (max-width:640px){
+ .textBlock{
+  font-size: 10px;
+ }
+}

@@ -14,7 +14,7 @@ import { required, maxLengthCreator}  from './../../utils/validators/validators'
 //   return re.test(email);
 // }
 
-const maxLengthCreator10=maxLengthCreator(10);
+const maxLengthCreator20=maxLengthCreator(20);
 
 const SignInForm=(props)=> {
   return(
@@ -22,7 +22,7 @@ const SignInForm=(props)=> {
     <Field                 
     placeholder={'Електронна пошта'}
     name={'email'}
-    validate={[required, maxLengthCreator10]}      
+    validate={[required, maxLengthCreator20]}      
     component={FormControlsInput}
     label={"E-mail"}
     />
@@ -30,7 +30,7 @@ const SignInForm=(props)=> {
     placeholder={'Пароль'}
     name={'password'}                            
     component={FormControlsInput}
-    validate={[required, maxLengthCreator10]}
+    validate={[required, maxLengthCreator20]}
     label={'пароль'}
     />
     <div className='registration'>
@@ -49,7 +49,7 @@ const SignInForm=(props)=> {
     }
     return  <div className='Auth'>
     <div className='AuthForm'>
-    <h1> Авторизація </h1>
+    <h1> Авторизація внатуре </h1>
 
     <SignInReduxForm onSubmit={onSubmitToFormReducer}  />
     </div>

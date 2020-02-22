@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import Button from './../Button/Button';
 //import fire from '../Fire';
-import {Route} from 'react-router-dom';
+//import {Route} from 'react-router-dom';
 //import SignUp from './Auth/SignUp';
 //import SignUpContainer from './Auth/SignUpContainer';
 import styles from './Contacts.module.css';
 import {NavLink} from 'react-router-dom';
 //import styles2 from './css/Bootstrap.module.css';
-import SignIn from './../SignIn/SignIn';
-//import SignUp from './../Auth/SignUp';
+//import SignIn from './../SignIn/SignIn';
+
 //import {hideBeginningReducer} from './../../redux/quizReducer';
 
 
@@ -16,6 +16,7 @@ class Contacts extends Component {
 
   render(){
     const isSignInOpen=true;
+    console.log(this.props);
 	return(
       <div >
  
@@ -24,7 +25,8 @@ class Contacts extends Component {
                       <div className={styles.contactHead}>
                           <h3>Контакти</h3>
                        </div>
-                       {isSignInOpen && <Route path='/SignIn' component={SignIn} />}
+                      
+              
                       <div className={styles.contactTop}>
                              
                                           <div className={styles.contGridNew}>
@@ -58,8 +60,8 @@ class Contacts extends Component {
                                                     
                                           </div>
                                            <div className={styles.clearfix}></div>
-                               <NavLink  to='/SignIn'> <Button value={'Вхід'}  /> </NavLink>
-                               // <SignIn />
+                              
+                             
                                 <div className={styles.clearfix}></div>
                       </div>
               </div>
@@ -83,40 +85,39 @@ class Contacts extends Component {
                 <div> 
                       <h3>Наші партнери</h3>
                       <ul className={styles.bottom}>
-                        <li><a href='#' >Фінансовий ліцей, м. Київ </a> </li>
-                        <li><a href='#' >Український фізико-математичний ліцей Київського національного університету  імені Тараса Шевченка, м. Київ </a> </li>
-                        <li><a href='#' >Науково-природничий ліцей №145, м. Київ </a> </li>
-                        <li><a href='#' >Школа 2222 , 22222 Китай </a> </li>
-                        <li><a href='#' >Ліцей бізнес, м. Київ</a> </li>
-                        <li><a href='#' >Бахмацька гімназія, м. Бахмач </a> </li>
-                        <li><a href='#' >Жовтневий ліцей, м. Кривий Ріг </a> </li>
-                        <li><a href='#' >Центрально-міська гімназія, м. Кривий Ріг </a> </li>
-                        <li><a href='#' >Центрально-міський ліцей, м. Кривий Ріг </a> </li>
-                        <li><a href='#' >Житомирський обласний педагогічний ліцей, м. Житомир </a> </li>
-                        <li><a href='#' >Школа №10 з поглибленим вивченням французької мови, м. Одеса</a> </li>
-                        <li><a href='#' >НВК  «Українська школа-гімназія м. Сімферополя», м. Сімферополь </a> </li>
-                        <li><a href='#' >Українська гуманітарна гімназія ім.Олени Степанів, м. Львів </a> </li>
-                        <li><a href='#' >Марківецька школа ЗОШ І-ІІІ ступеня Чернігівської області;  </a> </li>
-                        <li><a href='#' >Хотівська ЗОШ І-ІІІ ступеня Київської області;  </a> </li>
-                        <li><a href='#' >Ріпкинська гімназія Чернігівської області;  </a> </li>
-                        <li><a href='#' >Українські школи пострадянського простору:  </a> </li>
-                        <li><a href='#' >Республіканський Український теоретичний ліцей м. Тирасполя (Придністров’я);  </a> </li>
-                        <li><a href='#' >середня ЗОШ №280 ім. М.Ю.Лермонтова м. Санкт-Петербург (Російська Федерація);  </a> </li>
-                        <li><a href='#' >Академічна гімназія Санкт-Петербурзького державного університету Російської Федерації;  </a> </li>
-                        <li><a href='#' >Муніципальний освітній заклад Бендерська гімназія №3 ім. І.Котляревського;  </a> </li>
-                        <li><a href='#' >Українська гімназія-комплекс м. Астани (Республіка Казахстан);  </a> </li>
-                        <li><a href='#' >Українська середня школа м. Риги (Республіка Латвія);  </a> </li>
-                        <li><a href='#' >гімназія №14 м. Мінська (Республіка Білорусь);  </a> </li>
-                        <li><a href='#' >Український ліцей ім. Коцюбинського м. Кишинева (Республіка Молдова);  </a> </li>
-                        <li><a href='#' >середня школа №21 м. Душанбе (Республіка Таджикистан);  </a> </li>
-                        <li><a href='#' >Українські школи США, Канади, Австралії:  </a> </li>
-                        <li><a href='#' >школа Українознавства ОУА «Самопоміч» м. Нью-Йорка США;  </a> </li>
-                        <li><a href='#' >Українська муніципальна школа м. Мельбурна Канади;  </a> </li>
-                        <li><a href='#' >загальноосвітній ліцей ім. Адама Чарторицького м.Пулави (Республіка Польща);  </a> </li>
-                        <li><a href='#' >Середня школа №2, міста Шиньдзяджуан, провінції Хебей,  </a> </li>
-                        <li><a href='#' >Середня школа №1 міста Тайюань, району Сяодень, провінції Шанчі  </a> </li>
-                        <li><a href='#' >Shanghai High School (Китайська Народна Республіка);  </a> </li>
-                        <li><a href='#' >Гімназія Еразмус Грассер м. Мюнхена (Німеччина).  </a> </li>
+                        <li><a href='http://finlyc.kiev.ua' >Фінансовий ліцей, м. Київ </a> </li>
+                        <li><a href='http://upml.knu.ua' >Український фізико-математичний ліцей Київського національного університету  імені Тараса Шевченка, м. Київ </a> </li>
+                        <li><a href='https://lic145.kiev.ua' >Науково-природничий ліцей №145, м. Київ </a> </li>
+                        <li><a href='https://klb.education' >Київський ліцей бізнесу, м. Київ</a> </li>
+                        <li><a href='http://bahmach.osv.org.ua/bahmacka-gimnaziya-15-09-53-10-08-2017/' >Бахмацька гімназія, м. Бахмач </a> </li>
+                        <li><a href='https://kr.gov.ua/ua/news/pg/190712537652716_s/' >Жовтневий ліцей, м. Кривий Ріг </a> </li>
+                        <li><a href='https://krmisto.gov.ua/ua/schools/598.html' >Центрально-міська гімназія, м. Кривий Ріг </a> </li>
+                        <li><a href='http://www.kcml.dp.ua' >Центрально-міський ліцей, м. Кривий Ріг </a> </li>
+                        <li><a href='https://www.facebook.com/pages/Житомирський-обласний-педагогічний-ліцей/144190262279577' >Житомирський обласний педагогічний ліцей, м. Житомир </a> </li>
+                        <li><a href='https://www.education.ua/ua/schools/odessa/sh-10/' >Школа №10 з поглибленим вивченням французької мови, м. Одеса</a> </li>
+                        <li><a href='https://uk.wikipedia.org/wiki/Українська_школа-гімназія_(Сімферополь)' >НВК  «Українська школа-гімназія м. Сімферополя», м. Сімферополь </a> </li>
+                        <li><a href='http://www.lugos.lviv.sch.in.ua' >Українська гуманітарна гімназія ім.Олени Степанів, м. Львів </a> </li>
+                        <li><a href='https://cg.isuo.org/schools/view/id/21104' >Марківецька школа ЗОШ І-ІІІ ступеня Чернігівської області  </a> </li>
+                        <li><a href='https://youcontrol.com.ua/catalog/company_details/25667202/' >Хотівська ЗОШ І-ІІІ ступеня Київської області  </a> </li>
+                        <li><a href='https://cg.isuo.org/ru/schools/view/id/21223' >Ріпкинська гімназія Чернігівської області  </a> </li>
+                        <br/><br/>
+                        <li><a href='https://uk.wikipedia.org/wiki/Республіканський_український_теоретичний_ліцей' >Республіканський Український теоретичний ліцей м. Тирасполя (Придністров’я)  </a> </li>
+                        <li><a href='http://school280.ru' >середня ЗОШ №280 ім. М.Ю.Лермонтова м. Санкт-Петербург (Російська Федерація)  </a> </li>
+                        <li><a href='https://uk.wikipedia.org/wiki/Список_університетів_Росії' >Академічна гімназія Санкт-Петербурзького державного університету Російської Федерації  </a> </li>
+                        <li><a href='http://gimnasium-3.narod.ru' >Муніципальний освітній заклад Бендерська гімназія №3 ім. І.Котляревського  </a> </li>
+                        <li><a href='https://kazakhstan.mfa.gov.ua/posolstvo/5011-ukrajinsyki-gromadi-kazahstanu' >Українська гімназія-комплекс м. Астани (Республіка Казахстан)  </a> </li>
+                        <li><a href='http://osvita.ukrainianworldcongress.org/ukrajinska-shkola-diaspora-Latvia/' >Українська середня школа м. Риги (Республіка Латвія)  </a> </li>
+                        <li><a href='#' >гімназія №14 м. Мінська (Республіка Білорусь)  </a> </li>
+                        <li><a href='http://buktolerance.com.ua/?p=5168' >Український ліцей ім. Коцюбинського м. Кишинева (Республіка Молдова)  </a> </li>
+                        <li><a href='#' >середня школа №21 м. Душанбе (Республіка Таджикистан)  </a> </li>
+                        <li><a href='#' >Українські школи США, Канади, Австралії  </a> </li>
+                        <li><a href='http://osvita.ukrainianworldcongress.org/ukrajinska-shkola-diaspora-USA/' >школа Українознавства ОУА «Самопоміч» м. Нью-Йорка США  </a> </li>
+                        <li><a href='#' >Українська муніципальна школа м. Мельбурна Канади  </a> </li>
+                        <li><a href='#' >загальноосвітній ліцей ім. Адама Чарторицького м.Пулави (Республіка Польща)  </a> </li>
+                        <li><a href='https://uk.wikipedia.org/wiki/Хебей' >Середня школа №2, міста Шиньдзяджуан, провінції Хебей  </a> </li>
+                        <li><a href='https://ru.wikipedia.org/wiki/Тайюань' >Середня школа №1 міста Тайюань, району Сяодень провінції Шанчі  </a> </li>
+                        <li><a href='#' >Shanghai High School (Китайська Народна Республіка)  </a> </li>
+                        <li><a href='http://eu.univ.kiev.ua/departments/ukrayins%60kyy-gumanitarnyy-lits/' >Гімназія Еразмус Грассер м. Мюнхена (Німеччина)  </a> </li>
                       </ul>
                 </div> 
             </div>

@@ -1,55 +1,87 @@
 import React, {Component} from 'react';
-import NewsOne from './NewsOne';
 import styles from './News.module.css';
-//import axios from 'axios';
-//import {getNews} from './../../redux/appReducer'; 
+import Userscard from './../Home/Userscard';
+ import {NavLink} from 'react-router-dom';
+ import {takeLastNews, takePreviousNews} from './../../redux/appReducer';
+ import Button from './../Button/Button';
+ import Registration from './../News/Registration';
+ import {closeAddNewsForm, openSignInComponent} from './../../redux/quizReducer';
+  import {logoutUser} from './../../redux/authReducer';
+ import dateWord from './../functions/functionDate';
+ import SignIn from './../SignIn/SignIn';
+ import renderHTML from 'react-render-html';
 
 
 class News extends Component {
 
     
     
-
+    closeAddNewsForm=()=>{
+       this.props.dispatch(closeAddNewsForm());
+    }
     render(){
       console.log(this.props);
-          const newsAllDataSort=Object.values(this.props.state.appReducer.news);
-          // newsAllDataSort.sort(function (a, b){
-          //       var dateA=new Date(a.date), dateB=new Date(b.date);
-          //       return (dateA-dateB);
-          // });
-          const dateWord=(dateNumber)=>{
-            switch(dateNumber.substr(0, 2)){
-            case '01': return ('Січень' + dateNumber.substr(2, 9))
-            case '02': return ('Лютий' + dateNumber.substr(2, 9))
-            case '03': return ('Березень' + dateNumber.substr(2, 9))
-            case '04': return ('Квітень' + dateNumber.substr(2, 9))
-            case '05': return ('Травень' + dateNumber.substr(2, 9))
-            case '06': return ('Червень' + dateNumber.substr(2, 9))
-            case '07': return ('Липень' + dateNumber.substr(2, 9))
-            case '08': return ('Серпень' + dateNumber.substr(2, 9))
-            case '09': return ('Вересень' + dateNumber.substr(2, 9))
-            case '10': return ('Жовтень' + dateNumber.substr(2, 9))
-            case '11': return ('Листопад' + dateNumber.substr(2, 9))
-            case '12': return ('Грудень' + dateNumber.substr(2, 9))
-
-              default:console.log(dateNumber.substr(0, 2)); 
-              return dateNumber
-            }
-          }
-
+         
+           const newsLast=this.props.state.appReducer.news.length;
+            console.log(newsLast);
+    const newsFirst=0;
+           const UsersArrayOpen2=Object.values(this.props.state.appReducer.news).reverse().slice(newsFirst, newsLast);
+            const UsersArrayOpen =  [...UsersArrayOpen2];
+    console.log(this.props.state.quizReducer.isSignInOpen);
+      console.log('newsLast', newsLast);
+        console.log('newsFirst', newsFirst);
+          console.log('UsersArrayOpen', UsersArrayOpen);
+    
+     const moveNewsLeft=()=>{this.props.dispatch(takeLastNews());}
+    const moveNewsRight=()=>{this.props.dispatch(takePreviousNews());}
+    const openCloseSignIn=()=>{this.props.state.authReducer.user.email ? this.props.dispatch(logoutUser()) : this.props.dispatch(openSignInComponent());}
+    const isRegistrationOpen = this.props.state.authReducer.user.email;
+    console.log(this.props.state.appReducer.news);
+    const currentNews=this.props.state.appReducer.news.length;
+    console.log(this.props.state.appReducer.news.length);
     return (  
-        <div className={styles.endingScreen}> 
-            <div className={styles.ending}>
-                <h1>Новини і анонси</h1>
-                <div>
-                    {
-                        newsAllDataSort.reverse().map(function(item, i){
-                           return( <NewsOne key={i} newsId={newsAllDataSort[i].id} date={dateWord(newsAllDataSort[i].date)} name={newsAllDataSort[i].name} picture={newsAllDataSort[i].picture} text={newsAllDataSort[i].text}></NewsOne> ); 
-                        }) 
-                    }   
-                </div>   
-            </div>
-        </div>  
+         <div className={styles.users}>
+
+                    <h2>НОВИНИ І АНОНСИ</h2>
+                    <div className={styles.signInButton}><Button value={ this.props.state.authReducer.user.email || 'LogIn' } onClick={()=>openCloseSignIn()} /></div>
+                    <div className={styles.arrowLeft} onClick={()=>moveNewsLeft()}></div>
+                      {this.props.state.quizReducer.isSignInOpen && <SignIn /> }
+                     {isRegistrationOpen &&  <Registration /> }
+                    
+                        {/* Формирование карточек Userscard */}                
+                        {
+                            UsersArrayOpen.map(function(item, i){
+                              console.log(i, UsersArrayOpen[i]);
+                              console.log(currentNews - i);
+                                return( 
+                               
+                                    <React.Fragment key={i} >
+                                      <NavLink to={'/NewsOneOpened/'+(currentNews-1 - i)}> 
+                                        <Userscard 
+                                        newsWide100={true}
+                                        name={UsersArrayOpen[i].name} 
+                                        picture={UsersArrayOpen[i].picture} 
+                                        text={renderHTML(UsersArrayOpen[i].text)}
+                                        //date={UsersArrayOpen[i].date}
+                                        date={dateWord(UsersArrayOpen[i].date)}
+                                        newsId={UsersArrayOpen[i].id}
+                               
+                                        />    
+                                      </NavLink>                           
+                                    </React.Fragment> 
+                                
+                                );        
+                            })
+                        }   
+                         <div className={styles.arrowRight} onClick={()=>moveNewsRight()}></div>         
+                        <div className='clearfix'></div>
+                        <div className={styles.stro}>
+                          <Button disabled ={false} value={' Додати новину'} onClick={this.closeAddNewsForm} />
+                        </div>
+                        
+              
+                </div>
+            
       )
     }
 }

@@ -1,9 +1,9 @@
 import fire from './../Fire';
 //import axios from 'axios';
 //import {reset} from 'redux-form';
+import {closeSignInComponent} from './quizReducer';
 
 const HIDE_AUTH = 'HIDE_AUTH';
-const USER_SIGN_UP = 'USER_SIGN_UP';
 const USER_LOG_IN = 'USER_LOG_IN';
 //const USER_LOG_OUT = 'USER_LOG_OUT';
 //const USER_VERIFY = 'USER_VERIFY';
@@ -19,20 +19,17 @@ const VERIFY_SUCCESS = "VERIFY_SUCCESS";
 const REGISTER   = "REGISTER";
 
 const initialState={
-	photoURL: null,
-    isSignInOpen:true,      //Beginning
-	isSignUpOpen:true,		//Beginning
-	username: '',
+    isSignInOpen:true,     
 	email: '',
 	error: null,
-	displayName: null,
-	user: null,
 	isLoggingIn: false,
 	isLoggingOut: false,
 	isVerifying: false,
 	loginError: false,
-	logoutError: false,
-	isLoggedIn: false 
+	isLoggedIn: false,
+	user: {
+		email: null
+	}
 }
 
 const authReducer =(state=initialState, action) =>{
@@ -42,10 +39,7 @@ const authReducer =(state=initialState, action) =>{
 									...state,
 									isUserAuthorized: true
 								}
-		case USER_SIGN_UP:      return{		
-									...state,
-									isSignUpOpen: false
-								}
+	
 		case USER_LOG_IN:
 								console.log(' USER_LOG_IN');
 								return{		
@@ -85,7 +79,7 @@ const authReducer =(state=initialState, action) =>{
 									...state,
 									isLoggingOut: false,
 									isAuthenticated: false,
-									user: null,
+									user: {email:null},
 									isLoggedIn: false
 
 								}
@@ -112,17 +106,6 @@ const authReducer =(state=initialState, action) =>{
 	}
 }
 
-const userSignUp =()=>{
-				return{
-					type: USER_SIGN_UP
-				}
-}
-// intext.io
-// const requestLogin = () => {
-// 				return {
-// 					type: LOGIN_REQUEST
-// 				}
-// }
 const receiveLogin = user => {
 				console.log(user);
 				return {
@@ -170,28 +153,16 @@ export const register = (displayName, email) => {
 				}
 }
 
-export const signUpUser =(email, password, displayName)=> dispatch => {
-				fire.auth().createUserWithEmailAndPassword(email, password).then((userCredentials) =>{
-					console.log(userCredentials.user);
-					userCredentials.user.updateProfile({displayName});
-					alert('Ви зареєстровані');
-					console.log(userCredentials.user);
-					dispatch(userSignUp());
-					//dispatch(loginUser(email, password));
-					//dispatch(loginUser(userCredentials.user.displayName, userCredentials.user.email));
-					//this.props.history.push(`/Beginning`);
-				}).catch ((error) =>{
-					alert('Реєстрація невдала.');
-					console.log(error);
 
-				});	
-}
 
 export const loginUser = (email, password) => dispatch => {
+	alert('логінізація');
 			    fire.auth().signInWithEmailAndPassword(email, password).then(user =>{
 			    	dispatch(receiveLogin(user));
+alert(' верифікація');
 			    	dispatch(verifyAuth(true));
 			    	alert('Ви залогінізовані');
+			    	dispatch(closeSignInComponent());
 			    }).catch(error => { 
 			    	//dispatch(reset('formReducer'));
 			    	dispatch(loginError());
@@ -203,13 +174,13 @@ export const logoutUser =()=> dispatch =>{
 				dispatch(requestLogout());
 				fire.auth().signOut().then(() => {
 					dispatch(receiveLogout());
+					dispatch(closeSignInComponent());
 				}).catch(error => {
 					dispatch(logoutError(error));
 				});
 }
 
 export const verifyAuth = () => async (dispatch) => {
-				alert('идет верификация');
 				dispatch(verifyRequest());
 				console.log('идет верификация, при этом state = , this.state');
 				const response = await fire.auth({withCredentials: true}).onAuthStateChanged(user => {
@@ -220,27 +191,6 @@ export const verifyAuth = () => async (dispatch) => {
 				});
 				return response
 }
-
-
-// export const saveRatingResult =(rightAnswersQuantity)=>dispatch=>{
-
-// 			const newUser={
-// 				displayName: this.state.displayName,
-// 				rightAnswersQuantity: rightAnswersQuantity
-// 			};
-// 			console.log('запустился hideSaveResultButtonAC', rightAnswersQuantity);
-
-
-// axios.post('https://abzagency.firebaseio.com/rate.json', newUser).then(response => {
-// 	// axios.get('https://abzagency.firebaseio.com/rate.json').then(response => {
-//  console.log(response.data);
-//  //  			
-//  //  		});
-// 	//dispatch(hideSaveResultButtonAC());
-
-// 	});
-
-// }
 
 
 //export const receiveLogin(user)=(user)=>({type: USER_LOG_IN, user});
