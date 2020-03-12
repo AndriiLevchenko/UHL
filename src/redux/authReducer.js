@@ -1,12 +1,9 @@
 import fire from './../Fire';
-//import axios from 'axios';
-//import {reset} from 'redux-form';
 import {closeSignInComponent} from './quizReducer';
 
 const HIDE_AUTH = 'HIDE_AUTH';
 const USER_LOG_IN = 'USER_LOG_IN';
-//const USER_LOG_OUT = 'USER_LOG_OUT';
-//const USER_VERIFY = 'USER_VERIFY';
+
 
 const LOGIN_REQUEST  = "LOGIN_REQUEST";
 const LOGIN_SUCCESS  = "LOGIN_SUCCESS";
@@ -50,12 +47,6 @@ const authReducer =(state=initialState, action) =>{
 									isSignInOpen:false,
 									isOpenBeginning: false
 								}
-		// case USER_VERIFY:  		return{
-		// 							...state,
-		// 							isUserAuthorized: true,
-		// 							isSignInOpen: false,     
-		// 							isSignUpOpen: false	
-		// 						}
 		case LOGIN_REQUEST:     return {
 									...state,
 									isLoggingIn: true,
@@ -153,8 +144,6 @@ export const register = (displayName, email) => {
 				}
 }
 
-
-
 export const loginUser = (email, password) => dispatch => {
 	alert('логінізація');
 			    fire.auth().signInWithEmailAndPassword(email, password).then(user =>{
@@ -184,6 +173,7 @@ export const verifyAuth = () => async (dispatch) => {
 				dispatch(verifyRequest());
 				console.log('идет верификация, при этом state = , this.state');
 				const response = await fire.auth({withCredentials: true}).onAuthStateChanged(user => {
+					console.log('user = ', user);
 					if (user !== null) {
 						dispatch(receiveLogin(user));
 					}
@@ -191,12 +181,5 @@ export const verifyAuth = () => async (dispatch) => {
 				});
 				return response
 }
-
-
-//export const receiveLogin(user)=(user)=>({type: USER_LOG_IN, user});
-// export const userLogOutTC=()=>({type: USER_LOG_OUT});
-//export const userLogOutAC=()=>({type: USER_LOG_OUT});
-//export const userVerifyAC=(user)=>({type: USER_VERIFY, user});
-// export const userSignUpTC=()=>({type: USER_SIGN_UP, email, password});
 
 export default authReducer

@@ -1,20 +1,16 @@
 import React, {Component} from 'react';
 import './App.css';
-//import Settings from './components/Settings/Settings';
 import {Route, withRouter} from 'react-router-dom';
 import {compose} from 'redux';
 import {connect} from 'react-redux';
-//import LoginPage from './components/Login/Login';
-
 import styles from './Components/Home/Home.module.css';
-//import fire from 'firebase';
-import axios from 'axios';
-//import Preloader from './components/common/Preloader';
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
+import AboutMobile from './Components/About/AboutMobile';
 import Vykhovannia from './Components/Vykhovannia/Vykhovannia';
 import Uchinnia from './Components/Uchinnia/Uchinnia';
 import Partnership from './Components/Partnership/Partnership';
+import ProzoristiVidkrytist from './Components/ProzoristiVidkrytist/ProzoristiVidkrytist';
 import News from './Components/News/News';
 import Science from './Components/Science/Science';
 import Unesco from './Components/Unesco/Unesco';
@@ -30,25 +26,15 @@ import ChoreographyStudio from './Components/ChoreographyStudio/ChoreographyStud
 import ChorStudio from './Components/ChorStudio/ChorStudio';
 import LiteratureStudio from './Components/LiteratureStudio/LiteratureStudio';
 import TheaterStudio from './Components/TheaterStudio/TheaterStudio';
-import {initializeApp, getNews, getNewsLength} from './redux/appReducer'; 
+import {initializeApp} from './redux/appReducer'; 
 import {openCloseMobileMenu} from './redux/quizReducer';
-import {verifyAuth} from './redux/authReducer';
+
 
 class  App extends Component {
 	
 			componentDidMount(){
 				console.log('насчался ComponentdidMount     response.data, при этом isLoggedIn = ', this.props.state.authReducer.isLoggedIn);
-				//  Внатуре возвратиться к этой точке
-				// axios.get('https://abzagency.firebaseio.com/news.json').then(response => {
-				// 	console.log(response.data);
-				// 	this.props.dispatch(getNews(Object.values(response.data).sort(function (a, b){
-				// 		var dateA=new Date(a.date), dateB=new Date(b.date);
-				// 		return (dateA-dateB);
-				// 	})));
-				// 	this.props.dispatch(getNewsLength());
-				// });
 				this.props.dispatch(initializeApp());
-				
 			}
 	openCloseMobileMenu =()=>{ this.props.dispatch(openCloseMobileMenu());}
 	render(){
@@ -66,7 +52,11 @@ class  App extends Component {
 				        <div className={styles.topHeader + ' ' + (styleHome ? ' ' : styles.two)}>
 				            <div className={styles.container}>
 				                <LogoUHL />             
-				                <Navbar dispatch = {this.props.dispatch} onClick={this.openCloseMobileMenu} isMobileMenuOpen={this.props.state.quizReducer.isMobileMenuOpen} />
+				                <Navbar dispatch = {this.props.dispatch} 
+				                		onClick={this.openCloseMobileMenu} 
+				                		isMobileMenuOpen={this.props.state.quizReducer.isMobileMenuOpen}
+				                		isDropdownAboutMenuOpen={this.props.state.quizReducer.isDropdownAboutMenuOpen}
+				                />
 							{ styleHome && <div >
 					            <Loadingg state={this.props.state} dispatch={this.props.dispatch} />  
 						    
@@ -90,7 +80,9 @@ class  App extends Component {
 					<Route path='/' exact render= {()=> <Home  state={this.props.state} dispatch = {this.props.dispatch}/>}/>
 		    		<Route path='/uchinnia' 		render= {()=> <Uchinnia   		/>}/>
 		    		<Route path='/partnership'	    render= {()=> <Partnership		/>}/>
+		    		<Route path='/prozoristividkrytist'	    render= {()=> <ProzoristiVidkrytist		/>}/>
 					<Route path='/about' 			render= {()=> <About   		    />}/>
+					<Route path='/aboutMobile' 		render= {()=> <AboutMobile   		    />}/>
 					<Route path='/vykhovannia' 		render= {()=> <Vykhovannia   	/>}/>
 		    		<Route path='/news'				render= {()=> <News     state={this.props.state}  
 		    																dispatch = {this.props.dispatch}    
@@ -117,5 +109,5 @@ class  App extends Component {
 		const mapStateToProps =(state)=> ({
 				initialized: state.appReducer.initialized
 		});
-				//Обернули withRouter-ом потому что может сбиваться роутинг при добавлении connect, и при этом испольщовали compose
-export default compose(withRouter, connect(mapStateToProps, {initializeApp}))(App);
+// 				//Обернули withRouter-ом потому что может сбиваться роутинг при добавлении connect, и при этом испольщовали compose
+ export default compose(withRouter, connect(mapStateToProps, {initializeApp}))(App);    

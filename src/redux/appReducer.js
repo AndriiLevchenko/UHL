@@ -1,8 +1,7 @@
 import fixtures from './../fixtures';
 import {verifyAuth} from './authReducer';
-import fire from './../Fire';
+//import fire from './../Fire';
 import axios from 'axios';
-
 
 const INITIALIZED_SUCCESS ='app/INITIALIZED_SUCCESS';
 const GET_NEWS = 'GET_NEWS';
@@ -10,13 +9,11 @@ const GET_NEWS_LENGTH ='GET_NEWS_LENGTH';
 const TAKE_LAST_NEWS='TAKE_LAST_NEWS';
 const TAKE_PREVIOUS_NEWS='TAKE_PREVIOUS_NEWS';
 
-
 const initialState={
 	news: [],
 	newsLength: 3,
 	newsLastt: 4,
-	initialized: false
-	
+	initialized: false	
 }
 
 const appReducer =(state=initialState, action) =>{
@@ -55,7 +52,6 @@ const appReducer =(state=initialState, action) =>{
 
 export default appReducer;	
 
-
 export const getNews =(news)=>({type: GET_NEWS, news });
 export const getNewsLength=()=>({type: GET_NEWS_LENGTH});
 export const initializedSuccess =()=>({ type: INITIALIZED_SUCCESS });
@@ -64,42 +60,18 @@ export const takePreviousNews =()=>({type: TAKE_PREVIOUS_NEWS});
 export const initializeApp =()=>(dispatch)=>{
 	console.log('запустился внатуре initializeApp');
 
-
-			let dispatchGetNews=	axios.get('https://abzagency.firebaseio.com/news.json').then(response => {
-
-				console.log(response.data);
-
+		let dispatchGetNews=	axios.get('https://abzagency.firebaseio.com/news.json').then(response => {
+			console.log(response.data);
 			dispatch(getNews(Object.values(response.data).sort(function (a, b){
 				var dateA=new Date(a.date), dateB=new Date(b.date);
 				return (dateA-dateB);
 			})));
-			
 			let dispatchVerifyAuth=dispatch(verifyAuth());
 			dispatch(getNewsLength());
-
 			console.log(dispatchGetNews);
-			Promise.all([dispatchGetNews, dispatchVerifyAuth]).then(()=>{dispatch(initializedSuccess())});
-
-			
+			Promise.all([dispatchGetNews, dispatchVerifyAuth]).then(()=>{dispatch(initializedSuccess())});	
 		});
-			
-
-	//let promise = dispatch(verifyAuth());
-	//console.log('initializing is ON and promise', promise);
-	//promise.then(() => {dispatch(initializedSuccess());});
-
-	// fire.get('https://abzagency.firebaseio.com/userslist.json').then(response=>{
-
-	// });
-               
- //                this.setState({usersArray: response});
- //                const userslist=Object.values(response.data);
-	 //let news = fire.storage().ref().child('avatars');
-	// console.log ('fixtures = ', fixtures);
 }
-
-
-
 
 
 // export const getFixtures = ()=> async (dispatch) =>{

@@ -46,7 +46,7 @@ class News extends Component {
                     <div className={styles.signInButton}><Button value={ this.props.state.authReducer.user.email || 'LogIn' } onClick={()=>openCloseSignIn()} /></div>
                     <div className={styles.arrowLeft} onClick={()=>moveNewsLeft()}></div>
                       {this.props.state.quizReducer.isSignInOpen && <SignIn /> }
-                     {isRegistrationOpen &&  <Registration /> }
+                     {isRegistrationOpen &&  <Registration permissionWriteEmail={this.props.state.authReducer.user.email} /> }
                     
                         {/* Формирование карточек Userscard */}                
                         {

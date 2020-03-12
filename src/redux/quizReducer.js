@@ -11,6 +11,8 @@ const OPENCLOSE_MOBILE_MENU = 'OPENCLOSE_MOBILE_MENU';
 const CLOSE_ADD_NEWS_FORM = 'CLOSE_ADD_NEWS_FORM';
 const OPEN_SIGNIN_COMPONENT = 'OPEN_SIGNIN_COMPONENT';
 const CLOSE_SIGNIN_COMPONENT = 'CLOSE_SIGNIN_COMPONENT';
+const OPEN_CLOSE_DROPDOWNABOUT_MENU='OPEN_CLOSE_DROPDOWNABOUT_MENU';
+
 
 const initialState={
     
@@ -26,7 +28,8 @@ const initialState={
 		    sliderPosition: 0,
 		    isMobileMenuOpen: false,
 		    isAddNewsFormOpen: true,
-		    isSignInOpen: false
+		    isSignInOpen: false,
+		    isDropdownAboutMenuOpen: false
 }
 
 const quizReducer =(state=initialState, action) =>{
@@ -71,11 +74,16 @@ const quizReducer =(state=initialState, action) =>{
 										...state,
 										isSignInOpen: false
 									}
+			case OPEN_CLOSE_DROPDOWNABOUT_MENU:
+			console.log('меню открывается');
+									return{
+										...state,
+										isDropdownAboutMenuOpen: !state.isDropdownAboutMenuOpen
+									}
 			default:                 return state;
 			}
 	}
 	
-
 
 export const changeSliderPositionAC =()=>({type: CHANGE_SLIDER_POSITION});
 export const hideAuthAC =()=>           ({type: HIDE_AUTH});
@@ -84,7 +92,6 @@ export const openCloseMobileMenu =()=>({type: OPENCLOSE_MOBILE_MENU});
 export const closeAddNewsForm =()=>({type: CLOSE_ADD_NEWS_FORM});
 export const openSignInComponent=()=>({type: OPEN_SIGNIN_COMPONENT});
 export const closeSignInComponent=()=>({type: CLOSE_SIGNIN_COMPONENT});
-
-
+export const openCloseDropdownAboutMenu=()=>({type: OPEN_CLOSE_DROPDOWNABOUT_MENU});
 
 export default quizReducer;

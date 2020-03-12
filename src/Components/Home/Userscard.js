@@ -18,8 +18,8 @@ const Userscard = (props) =>{
             <div className={props.newsWide100 ? styles.usersTextNews : styles.usersText} >
                 <h4>{props.name}</h4>   
               
-                <p className={styles.pText}>{props.text}</p> 
-                <p className='p-telephone'>{props.telephone}</p>          
+                <div className={styles.pText}>{props.text}</div> 
+                <div className='p-telephone'>{props.telephone}</div>          
             </div>  
         </div>
 	)
