@@ -50,9 +50,12 @@ const quizReducer =(state=initialState, action) =>{
 										...state,
 										isSignUpOpen: false
 									}
-			case OPENCLOSE_MOBILE_MENU: return{
+			case OPENCLOSE_MOBILE_MENU:
+							if(!state.isDropdownAboutMenuOpen){
+									return{
 										...state,
 										isMobileMenuOpen: !state.isMobileMenuOpen
+							}
 			}						
 			case CHANGE_PICTUREHOME:
 									return{

@@ -6,7 +6,7 @@
 
 const Navbar =(props)=>{
     console.log(props);
-    const openCloseMobileMenuFunction=()=>{props.dispatch(openCloseMobileMenu());}
+    //const openCloseMobileMenuFunction=()=>{props.dispatch(openCloseMobileMenu());}
    
     const openCloseDropdownAboutMenuFunction=()=>{props.dispatch(openCloseDropdownAboutMenu());}
 		return(	

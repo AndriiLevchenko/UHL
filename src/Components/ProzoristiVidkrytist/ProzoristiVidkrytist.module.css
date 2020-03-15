@@ -83,7 +83,7 @@ ol li{
 }
 
 @media screen and (max-width:800px){
-   
+ 
     .wrapper{
         padding: 4px;
     }
@@ -96,6 +96,10 @@ ol li{
    
     padding: 10px 15px 10px;
 }
+ .text_block h2{
+    font-size: 19px;
+    font-weight: 600;
+} 
   ol li{
         margin: 10px;
    font-size: 10px;
