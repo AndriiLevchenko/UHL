@@ -1,4 +1,4 @@
-
+/*
 .wrapper{
     position: relative;
     background: #ffffff;
@@ -15,28 +15,24 @@
 .wrapper a:hover{
     color:#1d282b;
 }
-.auto_img{
-    display: block;
-    max-width: 100%;
-    margin: 0 auto 24px;
-}
 
-/*
-.auto_img  img {
+.aboutFoto {
+  float: left;
+  width: 25%;
+  margin: 12px;
+}
+.aboutFoto  img {
   left: 0;
   right: 0;
-}*/
+}
 .text_block{
     overflow: hidden;
     color:#4a4a4a;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 24px;
-    min-height: 200px;
+    min-height: 200px;*/
     /* background: url("../images/hr.png") left bottom repeat-x;  */
-    padding: 10px 40px 10px;
-}
-.text_block h2{
-    text-align: center;
+   /* padding: 10px 40px 10px;
 }
 p{
     margin-bottom: 24px;
@@ -46,10 +42,10 @@ p{
     display: block;
     margin: 0 auto 40px;
 }
-.autoImg{
+.auto_img{
     display: block;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 24px;
 }
 .year{
     font-weight: 700;
@@ -63,8 +59,8 @@ h4{
 ul{
   margin: 0;
 }
-ol li{
-  list-style-type: circle;
+ul li{
+  list-style-type: none;
 }
 
 
@@ -83,28 +79,17 @@ ol li{
 }
 
 @media screen and (max-width:800px){
- 
-    .wrapper{
-        padding: 4px;
-    }
     .aboutFoto img{
     max-width: 80%;
     left: 0;
     right: 0;
   }
-  .text_block{
-   
-    padding: 10px 15px 10px;
-}
- .text_block h2{
-    font-size: 19px;
-    font-weight: 600;
-} 
-  ol li{
-        margin: 10px;
-   font-size: 10px;
-    line-height: 10px;
-}
+    .wrapper{
+        padding: 9px;
+    }
+    ul li{
+ font-size: 0.7em;
+    }
 }
 
 @media (max-width:320px){
@@ -121,4 +106,4 @@ ol li{
   .error-top {
     margin: 3em 0;
   }
-}
+}*/

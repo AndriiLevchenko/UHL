@@ -24,7 +24,7 @@ const Navbar =(props)=>{
                          
                               {props.isDropdownAboutMenuOpen &&  <div className={styles.dropdownMenuContent}  >
                                 <div className={styles.dropdownMenu}  onClick={openCloseDropdownAboutMenuFunction} > 
-                                    <NavLink to='/about'  activeClassName={styles.activeLink} ><h4>ПРО НАС</h4></NavLink>
+                                    <NavLink to='/ourliceum'  activeClassName={styles.activeLink} ><h4>ПРО НАС</h4></NavLink>
                                     <NavLink to='/uchinnia'  activeClassName={styles.activeLink}><h4>УЧІННЯ</h4></NavLink>
                                     <NavLink to='/vykhovannia'  activeClassName={styles.activeLink}><h4>ВИХОВАННЯ</h4></NavLink>
                                     <NavLink to='/partnership'  activeClassName={styles.activeLink} ><h4>ПАРТНЕРСТВО</h4></NavLink>

@@ -8,6 +8,24 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+	
+	
+	
+	
+	
+	//this was added recently because "This file does not exist and there was no index.html found in the current directory or 404.html in the root directory."
+	"rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
+	
+	
+	
+	
+	
+	
   }
 }

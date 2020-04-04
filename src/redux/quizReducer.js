@@ -56,7 +56,7 @@ const quizReducer =(state=initialState, action) =>{
 										...state,
 										isMobileMenuOpen: !state.isMobileMenuOpen
 							}
-			}						
+			}	break;					
 			case CHANGE_PICTUREHOME:
 									return{
 										...state,

@@ -5,14 +5,14 @@ import {compose} from 'redux';
 import {connect} from 'react-redux';
 import styles from './Components/Home/Home.module.css';
 import Home from './Components/Home/Home';
-import About from './Components/About/About';
-import AboutMobile from './Components/About/AboutMobile';
-import Vykhovannia from './Components/Vykhovannia/Vykhovannia';
-import Uchinnia from './Components/Uchinnia/Uchinnia';
-import Partnership from './Components/Partnership/Partnership';
-import ProzoristiVidkrytist from './Components/ProzoristiVidkrytist/ProzoristiVidkrytist';
+import OurLiceum from './Components/AboutComponents/OurLiceum/OurLiceum';
+import OurLiceumMobile from './Components/AboutComponents/OurLiceum/OurLiceumMobile';
+import Vykhovannia from './Components/AboutComponents/Vykhovannia/Vykhovannia';
+import Uchinnia from './Components/AboutComponents/Uchinnia/Uchinnia';
+import Partnership from './Components/AboutComponents/Partnership/Partnership';
+import ProzoristiVidkrytist from './Components/AboutComponents/ProzoristiVidkrytist/ProzoristiVidkrytist';
 import News from './Components/News/News';
-import Science from './Components/Science/Science';
+import Science from './Components/AboutComponents/Science/Science';
 import Unesco from './Components/Unesco/Unesco';
 import Contacts from './Components/Contacts/Contacts';
 import LogoUHL from './Components/LogoUHL';
@@ -78,28 +78,28 @@ class  App extends Component {
 						<div className="clearfix"> </div>           
 					</div> 
 					<Route path='/' exact render= {()=> <Home  state={this.props.state} dispatch = {this.props.dispatch}/>}/>
-		    		<Route path='/uchinnia' 		render= {()=> <Uchinnia   		/>}/>
-		    		<Route path='/partnership'	    render= {()=> <Partnership		/>}/>
-		    		<Route path='/prozoristividkrytist'	    render= {()=> <ProzoristiVidkrytist		/>}/>
-					<Route path='/about' 			render= {()=> <About   		    />}/>
-					<Route path='/aboutMobile' 		render= {()=> <AboutMobile   		    />}/>
-					<Route path='/vykhovannia' 		render= {()=> <Vykhovannia   	/>}/>
-		    		<Route path='/news'				render= {()=> <News     state={this.props.state}  
+		    		<Route path='/uchinnia' 			render= {()=> <Uchinnia   		/>}/>
+		    		<Route path='/partnership'	    	render= {()=> <Partnership		/>}/>
+		    		<Route path='/prozoristividkrytist'	render= {()=> <ProzoristiVidkrytist	 />}/>
+					<Route path='/ourliceum' 			render= {()=> <OurLiceum   		/>}/>
+					<Route path='/ourliceumMobile' 		render= {()=> <OurLiceumMobile  />}/>
+					<Route path='/vykhovannia' 			render= {()=> <Vykhovannia   	/>}/>
+		    		<Route path='/news'					render= {()=> <News     state={this.props.state}  
 		    																dispatch = {this.props.dispatch}    
 		    																isLoggedIn={this.props.state.authReducer.isLoggedIn}	
 																		    isAddNewsFormOpen={this.props.state.quizReducer.isAddNewsFormOpen}	
 																  />}
 					/>
-		    		<Route path='/science' 			render= {()=> <Science   	    />}/>
-		    		<Route path='/unesco' 			render= {()=> <Unesco			/>}/>
-					<Route path='/contacts' 		render= {()=> <Contacts         />}/>  
-					<Route path='/management' 		render= {()=> <Management       />}/>
-		    		<Route path='/mentors' 			render= {()=> <Mentors			/>}/>
-					<Route path='/admission' 		render= {()=> <Admission 		/>}/>  
-					<Route path='/choreographystudio' 		render= {()=> <ChoreographyStudio 	/>}/>  
-					<Route path='/chorstudio' 	    render= {()=> <ChorStudio       />}/>
-		    		<Route path='/literaturestudio' render= {()=> <LiteratureStudio	/>}/>
-					<Route path='/theaterstudio' 	render= {()=> <TheaterStudio 	/>}/>  
+		    		<Route path='/science' 				render= {()=> <Science   	    />}/>
+		    		<Route path='/unesco' 				render= {()=> <Unesco			/>}/>
+					<Route path='/contacts' 			render= {()=> <Contacts         />}/>  
+					<Route path='/management' 			render= {()=> <Management       />}/>
+		    		<Route path='/mentors' 				render= {()=> <Mentors			/>}/>
+					<Route path='/admission' 			render= {()=> <Admission 		/>}/>  
+					<Route path='/choreographystudio' 	render= {()=> <ChoreographyStudio 	 />}/>  
+					<Route path='/chorstudio' 	    	render= {()=> <ChorStudio       />}/>
+		    		<Route path='/literaturestudio' 	render= {()=> <LiteratureStudio	/>}/>
+					<Route path='/theaterstudio' 		render= {()=> <TheaterStudio 	/>}/>  
 					<Route path='/NewsOneOpened/:i?' 	render= {(i)=> <NewsOneOpened  state={this.props.state} i={i.match.params.i} />}/>
 			</div> 	   
 		);

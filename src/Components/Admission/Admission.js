@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from './Admission.module.css';
 
-
 const Admission =()=> {  
 
-	return (
-      <div className={styles.wrapper}>
-          <div className={styles.textBlock}>
+  	return (
+        <div className={styles.wrapper}>
+            <div className={styles.textBlock}>
                   <h2>ДОРОГІ ДІТИ!</h2>
                   <p>Ви наполегливі й розумні, самостійні й упевнені в собі, не боїтеся труднощів?</p>
                   <p>Ми раді надати Вам можливість випробувати себе і вступити до Українського гуманітарного ліцею Київського 
@@ -22,13 +21,10 @@ const Admission =()=> {
                     минулі роки, тому окремі питання можуть не відповідати діючим програмам.</p>
                   <p><a href='https://drive.google.com/file/d/0B-4kKmm5MXN1UVFZUFQxbk9tcGs/view'> Зразки тестів (8 клас)</a></p>
                   <p><a href='https://drive.google.com/file/d/0B-4kKmm5MXN1eUJuUndITHk2Ukk/view?usp=sharing'>Зразки тестів (9 клас)</a></p>
-
                   <h4 className={styles.year}><i>Бажаємо вам успіхів!</i></h4>
                   <h4 className={styles.year}><i>Учителі ліцею</i></h4>   
-
-          </div>    
-      </div>       
-  )  
-    
+            </div>    
+        </div>       
+    )     
 }
 export default Admission;

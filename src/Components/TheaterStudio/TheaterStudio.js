@@ -1,38 +1,16 @@
 import React from 'react';
-
-//import Button from './../Button/Button';
-//import fire from '../Fire';
-//import SignIn from './../Auth/SignIn';
-//import SignUp from './Auth/SignUp';
-//import SignUpContainer from './Auth/SignUpContainer';
 import styles from './TheaterStudio.module.css';
-//import styles2 from './css/Bootstrap.module.css';
-//<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-//import SignUp from './../Auth/SignUp';
-//import {hideBeginningReducer} from './../../redux/quizReducer';
-
 
 const TheaterStudio =()=> {
 
- 
-
-   
-    
-    
-    
-
-  return(
+    return(
         <div className={styles.wrapper}>
             <div className={styles.text_block}>
                 <h2>ТЕАТРАЛЬНА СТУДІЯ «МЕЛЬПОМЕНА»</h2>
-                    <p>Театр – мистецтво відображення життя, а ліцейна «Мельпомена» (керівники: Світлана Легіна, актриса 
-                    Молодого театру та Людмила Василенко, вчитель риторики ліцею) – це сцена мрій, сподівань і творчих 
-                    звершень.
-                    </p>
-
-                    <img src={'imgTheater.jpg'} alt="" className={styles.auto_img}/>
-                    
-                    <p>Театральна студія допомагає оволодіти мистецтвом самовираження та самотворення. Адже спектр діяльності 
+                <p>Театр – мистецтво відображення життя, а ліцейна «Мельпомена» (керівники: Світлана Легіна, актриса 
+                    Молодого театру та Людмила Василенко, вчитель риторики ліцею) – це сцена мрій, сподівань і творчих звершень.</p>
+                <img src={'imgTheater.jpg'} alt="" className={styles.auto_img}/>
+                <p>Театральна студія допомагає оволодіти мистецтвом самовираження та самотворення. Адже спектр діяльності 
                     студії є досить широким: від режисерського супроводу традиційних ліцейних свят, мистецьких конкурсів 
                     різного рівня до постановки повноцінних театральних вистав. Свій досвід і щедрість таланту дарували ліцею 
                     народні артисти України Богдан Бенюк, Анатолій Хостікоєв; заслужені артисти України Василь Мазур, Валерій 
@@ -44,6 +22,5 @@ const TheaterStudio =()=> {
             </div>
         </div>      
     )
-    
-  }
-  export default TheaterStudio;
+}
+export default TheaterStudio;

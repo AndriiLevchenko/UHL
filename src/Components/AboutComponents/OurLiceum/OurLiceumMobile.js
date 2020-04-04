@@ -1,7 +1,7 @@
 import React from 'react';
  //import s from './Navbar.module.css';
  import {NavLink} from 'react-router-dom';
- import styles from './../Home/Home.module.css';
+ import styles from './../../Home/Home.module.css';
 
 const AboutMobile =(props)=>{
     console.log(props.state);

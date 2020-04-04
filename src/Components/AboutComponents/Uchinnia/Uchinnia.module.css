@@ -1,4 +1,4 @@
-
+/*
 .wrapper{
     position: relative;
     background: #ffffff;
@@ -14,9 +14,9 @@
     color:#4a4a4a;
     font-size: 18px;
     line-height: 24px;
-    min-height: 200px;
+    min-height: 200px;*/
     /* background: url("../images/hr.png") left bottom repeat-x;  */
-    padding: 10px 40px 10px;
+   /* padding: 10px 40px 10px;
 }
 .textBlock p{
     margin-bottom: 10px;
@@ -50,7 +50,7 @@ ul{
 }
 ul li{
   list-style-type: none;
-}
+}*/
 table{
     width: 98%;
    
@@ -59,7 +59,7 @@ table{
     text-align: left;  
     table-layout: auto; /* По умолчанию. Браузер отображает таблицу после того, как проанализирует размеры ячеек */
 }
-td, th{
+/*td, th{
   width: 47%
 }
 .year19921993 {  
@@ -184,4 +184,4 @@ td, th{
  .textBlock{
   font-size: 10px;
  }
-}
+}*/
